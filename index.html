@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src='./js/Autokey.js' type='module'></script>
+	<script src='./js/Ceaser.js' type='module'></script>
+	<script src='./js/Encryption.js' type='module'></script>
+	<script src='./js/TwoString.js' type='module'></script>
+	<script src='./js/Vignere.js' type='module'></script>
+	<script src='./js/PlayFair.js' type='module'></script>
+	<title>Encryption Project</title>
+</head>
+
+<body>
+	<div class='title'>
+		<h1>Encryption Project</h1>
+	</div>
+	<div class='mainFrame'>
+		<div>
+			<!--Encryption Massafe-->
+			<div class= 'input area'>
+				<span class='textBox' >
+					The Massage
+				</span>
+				<span>
+					<input id='massage' class=input>
+					</span>
+
+					<!--Cyphering-->
+			<div class="cypherType area">
+				<span class='cypherText'>Cypher type</span>
+				<select name="cypherType" class=input id="cypher">
+					<option value="c">Ceaser Cypher</option>
+					<option vlaue="v">Vigenere Cypher</option>
+					<option vlaue="a">AutoKey Cypher</option>
+					<option vlaue="p">PlayFair Cypher</option>
+					<option vlaue="h">Hill Cypher</option>
+				</select>
+			</div>
+			<!--Key-->
+					<div class='input area'>
+						<span class='keyText'>
+							The Key
+						</span>
+						<span class= 'keyInput'>
+							<input id=key  class=input>
+						</span>
+					</div>
+					</div>
+			<!--Output-->
+			<div class= 'output area'>
+				<span class='textBox'>
+					The Output:
+				</span>
+				<span>
+					<span Id='outputValue'></span>
+				</span>
+			</div>
+			<!--Buttons-->
+			<div class=btnArea>
+				<span>
+					<button class='encrypt btn' id='encryptBtn'>
+						Encrypt
+					</button>
+				</span>
+				<span>
+					<button class='decrypt btn' id="decryptBtn">
+						Decrypt
+					</button>
+				</span>
+			</div>
+		</div>
+		<div>
+			<div>
+
+			</div>
+			<div>
+			</div>
+		</div>
+	</div>
+	<script src='./js/main.js' type='module'> </script>
+</body>
+
+</html>
