@@ -1,6 +1,7 @@
+import { Cypher } from "./Cypher.js";
 import { Encryption } from "./Encryption.js";
 
-export class PlayFair extends Encryption {
+export class PlayFair extends Encryption implements Cypher {
 
 
 	apper = {} as { [key: string]: boolean };

@@ -1,5 +1,6 @@
+import { Cypher } from "./Cypher.js";
 import { TwoStringEncryptyion } from "./TwoString.js";
-export class Vigenere extends TwoStringEncryptyion {
+export class Vigenere extends TwoStringEncryptyion implements Cypher{
 	constructor(massage: string, key: string) {
 		super(massage, key)
 		this.genrateKey();

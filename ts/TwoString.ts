@@ -1,5 +1,6 @@
+import { Cypher } from "./Cypher.js";
 import { Encryption } from "./Encryption.js";
-export abstract class TwoStringEncryptyion extends Encryption {
+export abstract class TwoStringEncryptyion extends Encryption implements Cypher{
 	protected sKey: string = '';
 	protected TwoStringEnc = (): string => {
 		let sRet = new String();

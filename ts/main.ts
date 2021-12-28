@@ -4,6 +4,10 @@ import { Ceaser } from "./Ceaser.js";
 import { AutoKey } from "./Autokey.js";
 import { Encryption } from "./Encryption.js";
 import {Hill} from "./Hill.js";
+import {Cypher} from "./Cypher.js";
+import { Rsa } from "./Rsa.js";
+
+let rsa = new Rsa();
 
 const vSetOutput = (sMassage: string): void => {
 	const element = document.querySelector('#outputValue');
@@ -18,7 +22,7 @@ const vSetOutput = (sMassage: string): void => {
 /**
  * 
  */
-const encryptionHeart = (): Encryption|Hill => {
+const encryptionHeart = (): Cypher => {
 	const massageInput: HTMLInputElement | null = document.querySelector('#massage');
 	const keyInput: HTMLInputElement | null = document.querySelector('#key');
 	const typeSelect: HTMLSelectElement | null = document.querySelector('#cypher');
@@ -27,7 +31,7 @@ const encryptionHeart = (): Encryption|Hill => {
 	let type = typeSelect.selectedIndex;
 	let massage = massageInput.value;
 	let key = keyInput.value;
-	let enc: Encryption|Hill;
+	let enc: Cypher;
 	if (type === 0) {
 		enc = new Ceaser(massage, key);
 	}
@@ -46,6 +50,10 @@ const encryptionHeart = (): Encryption|Hill => {
 			[[tKey[0], tKey[1]], [tKey[2], tKey[3]]];
 		enc = new Hill(massage, hKey);
 	}
+	else if (type === 5) {
+		rsa.setMassage(Number(massage));
+		enc = rsa;
+	}
 	else {
 		throw new Error('Type is not found');
 	}
@@ -57,7 +65,7 @@ let encrypt = (): void => {
 	vSetOutput(massage);
 }
 let decrypt = (): void => {
-	let massage = (encryptionHeart() as Encryption).decrypt();
+	let massage = (encryptionHeart() as Cypher).decrypt();
 	vSetOutput(massage);
 }
 
@@ -70,15 +78,24 @@ decryptBtn.addEventListener('click', decrypt);
 let typeSelect:HTMLSelectElement|null = document.querySelector('#cypher');
 if (typeSelect == null)
 	throw new Error('Type is null');
+
 typeSelect.addEventListener('change', () => {
-if (typeSelect == null)
-	throw new Error('Type is null');
+	let keyPlace:HTMLDivElement|null = document.querySelector('#keyPlace');
+	if (typeSelect == null)
+		throw new Error('Type is null');
 	if (decryptBtn == null)
 		throw new Error('Key is null');
+	if(keyPlace == null)
+		throw new Error('KeyPlace is null');
 	if (typeSelect.selectedIndex === 4) {
 		decryptBtn.style.display = 'none';
 	}
 	else
-	decryptBtn.style.display = 'inline';
+		decryptBtn.style.display = 'inline';
+	if (typeSelect.selectedIndex === 5)
+		keyPlace.style.display = 'none';
+	else
+		keyPlace.style.display = 'inline';
 }
 );
+

@@ -1,4 +1,5 @@
-export abstract class Encryption {
+import { Cypher } from "./Cypher";
+export abstract class Encryption implements Cypher {
 	protected massage: string;
 	protected key: string;
 

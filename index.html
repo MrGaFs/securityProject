@@ -21,16 +21,7 @@
 	</div>
 	<div class='mainFrame'>
 		<div>
-			<!--Encryption Massafe-->
-			<div class= 'input area'>
-				<span class='textBox' >
-					The Massage
-				</span>
-				<span>
-					<input id='massage' class=input>
-					</span>
-
-					<!--Cyphering-->
+			<!--Cyphering-->
 			<div class="cypherType area">
 				<span class='cypherText'>Cypher type</span>
 				<select name="cypherType" class=input id="cypher">
@@ -39,20 +30,30 @@
 					<option vlaue="a">AutoKey Cypher</option>
 					<option vlaue="p">PlayFair Cypher</option>
 					<option vlaue="h">Hill Cypher</option>
+					<option vlaue="r">RSA Cypher</option>
 				</select>
 			</div>
-			<!--Key-->
-					<div class='input area'>
-						<span class='keyText'>
-							The Key
-						</span>
-						<span class= 'keyInput'>
-							<input id=key  class=input>
-						</span>
-					</div>
-					</div>
+			<!--Encryption Massafe-->
+			<div class='input area'>
+				<span class='textBox'>
+					The Massage
+				</span>
+				<span>
+					<input id='massage' class=input>
+				</span>
+
+				<!--Key-->
+				<div class='input area' id='keyPlace'>
+					<span class='keyText'>
+						The Key
+					</span>
+					<span class='keyInput'>
+						<input id=key class=input>
+					</span>
+				</div>
+			</div>
 			<!--Output-->
-			<div class= 'output area'>
+			<div class='output area'>
 				<span class='textBox'>
 					The Output:
 				</span>

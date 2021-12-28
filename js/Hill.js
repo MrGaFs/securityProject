@@ -35,5 +35,7 @@ export class Hill {
         this.splited = new Array();
         this.split();
     }
+    decrypt() {
+        return '';
+    }
 }
-console.log(new Hill('shorter', [[7, 8], [11, 11]]).encrypt());

@@ -3,6 +3,8 @@ import { Vigenere } from "./Vignere.js";
 import { Ceaser } from "./Ceaser.js";
 import { AutoKey } from "./Autokey.js";
 import { Hill } from "./Hill.js";
+import { Rsa } from "./Rsa.js";
+let rsa = new Rsa();
 const vSetOutput = (sMassage) => {
     const element = document.querySelector('#outputValue');
     if (element == null)
@@ -42,6 +44,10 @@ const encryptionHeart = () => {
         let hKey = [[tKey[0], tKey[1]], [tKey[2], tKey[3]]];
         enc = new Hill(massage, hKey);
     }
+    else if (type === 5) {
+        rsa.setMassage(Number(massage));
+        enc = rsa;
+    }
     else {
         throw new Error('Type is not found');
     }
@@ -65,13 +71,20 @@ let typeSelect = document.querySelector('#cypher');
 if (typeSelect == null)
     throw new Error('Type is null');
 typeSelect.addEventListener('change', () => {
+    let keyPlace = document.querySelector('#keyPlace');
     if (typeSelect == null)
         throw new Error('Type is null');
     if (decryptBtn == null)
         throw new Error('Key is null');
+    if (keyPlace == null)
+        throw new Error('KeyPlace is null');
     if (typeSelect.selectedIndex === 4) {
         decryptBtn.style.display = 'none';
     }
     else
         decryptBtn.style.display = 'inline';
+    if (typeSelect.selectedIndex === 5)
+        keyPlace.style.display = 'none';
+    else
+        keyPlace.style.display = 'inline';
 });

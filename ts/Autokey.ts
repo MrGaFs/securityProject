@@ -1,6 +1,7 @@
 import { TwoStringEncryptyion } from './TwoString.js';
+import { Cypher } from './Cypher.js';
 
-export class AutoKey extends TwoStringEncryptyion {
+export class AutoKey extends TwoStringEncryptyion implements Cypher {
 	protected genrateKey(): void{
 		this.sKey = this.key;
 		this.sKey += this.massage;

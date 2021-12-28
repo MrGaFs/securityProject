@@ -1,6 +1,7 @@
+import { Cypher } from "./Cypher.js";
 import { Encryption } from "./Encryption.js";
 
-export class Ceaser extends Encryption {
+export class Ceaser extends Encryption implements Cypher {
 	protected isNumber= (): (Error|null) => {
 		if (isNaN(Number(this.key)))
 			throw new Error('Key Not a Number');

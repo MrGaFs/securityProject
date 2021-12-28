@@ -1,4 +1,5 @@
-export class Hill {
+import { Cypher } from "./Cypher";
+export class Hill implements Cypher {
 	massage: string;
 	key: [[number, number], [number, number]];
 	splited : Array<Array<string>>;
@@ -41,5 +42,7 @@ export class Hill {
 		}
 		return ret;
 	}
+	decrypt(): string {
+		return '';
+	}
 }
-console.log(new Hill('shorter', [[7, 8], [11, 11]]).encrypt());
