@@ -1,4 +1,3 @@
-import { random } from "core-js/core/number";
 import { Cypher } from "./Cypher";
 export class Rsa implements Cypher{
 	primeNumbers: number[] = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,]

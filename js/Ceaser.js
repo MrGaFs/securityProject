@@ -4,7 +4,7 @@ export class Ceaser extends Encryption {
         super(...arguments);
         this.isNumber = () => {
             if (isNaN(Number(this.key)))
-                throw new Error('Key Not a Number');
+                throw new Error('Key Not a Number'), alert('Please Enter Numuric Key');
             else
                 return null;
         };

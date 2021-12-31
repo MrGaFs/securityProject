@@ -68,4 +68,3 @@ export class Rsa {
         return String(ret).toString();
     }
 }
-console.log(new Rsa().pow(2, 10));
