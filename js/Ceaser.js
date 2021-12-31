@@ -3,8 +3,10 @@ export class Ceaser extends Encryption {
     constructor() {
         super(...arguments);
         this.isNumber = () => {
-            if (isNaN(Number(this.key)))
-                throw new Error('Key Not a Number'), alert('Please Enter Numuric Key');
+            if (isNaN(Number(this.key))) {
+                alert('Key must be a number in ceaser cypher');
+                throw new Error('Key Not a Number');
+            }
             else
                 return null;
         };
